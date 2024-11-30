@@ -51,10 +51,18 @@
             </div>
 
             <footer>
+                <!-- Start and Stop buttons -->
                 <button id="startMonitoringBtn">Start Monitoring</button>
+                <button id="stopMonitoringBtn" disabled>Stop Monitoring</button>
             </footer>
         </div>
     </div>
+  <!-- Emergency Alert Popup -->
+<div id="alertPopup" class="alert" style="display: none;">
+    <span id="alertMessage">Warning: High Stroke and Clot Risk!</span>
+    <button onclick="closeAlert()">Close</button>
+</div>
+
 
     <script src="app.js"></script>
 </body>
