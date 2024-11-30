@@ -1,61 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Prosthetic Monitoring</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Real-Time Prosthetic Monitoring</h1>
-        </header>
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        <div class="dashboard">
-            <div class="metrics">
-                <div class="metric" id="bloodFlow">
-                    <h2>Blood Flow (L/min)</h2>
-                    <div id="bloodFlowValue">Loading...</div>
-                </div>
-                <div class="metric" id="bloodPressure">
-                    <h2>Blood Pressure (mmHg)</h2>
-                    <div id="bloodPressureValue">Loading...</div>
-                </div>
-                <div class="metric" id="oxygenation">
-                    <h2>Oxygenation (%)</h2>
-                    <div id="oxygenationValue">Loading...</div>
-                </div>
-                <div class="metric" id="bloodRate">
-                    <h2>Blood Rate (beats/min)</h2>
-                    <div id="bloodRateValue">Loading...</div>
-                </div>
-                <div class="metric" id="clotRisk">
-                    <h2>Chances of Blood Clots (%)</h2>
-                    <div id="clotRiskValue">Loading...</div>
-                </div>
-                <div class="metric" id="strokeRisk">
-                    <h2>Heart Stroke Risk (%)</h2>
-                    <div id="strokeRiskValue">Loading...</div>
-                </div>
-            </div>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f9fd;
+  color: #333;
+}
 
-            <div class="charts">
-                <canvas id="bloodFlowChart"></canvas>
-                <canvas id="bloodPressureChart"></canvas>
-                <canvas id="oxygenationChart"></canvas>
-                <canvas id="bloodRateChart"></canvas>
-                <canvas id="clotRiskChart"></canvas>
-                <canvas id="strokeRiskChart"></canvas>
-            </div>
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-            <footer>
-                <button id="startMonitoringBtn">Start Monitoring</button>
-            </footer>
-        </div>
-    </div>
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    <script src="app.js"></script>
-</body>
-</html>
+h1 {
+  color: #0d6efd;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.metrics {
+  width: 45%;
+}
+
+.metric {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.metric h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* New CSS for additional metrics */
+#bloodRate, #clotRisk, #strokeRisk {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#bloodRate h2, #clotRisk h2, #strokeRisk h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#bloodRateValue, #clotRiskValue, #strokeRiskValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Button Styling */
+#startMonitoringBtn {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#startMonitoringBtn:hover {
+  background-color: #218838;
+}
+
+.charts {
+  width: 45%;
+}
+
+canvas {
+  max-width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metrics, .charts {
+    width: 100%;
+  }
+
+  #bloodRate, #clotRisk, #strokeRisk {
+    width: 100%;
+  }
+}
