@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pumping Heart</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+    .heart {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background-color: #e20000;
+      margin-bottom: 100px;
+      transform: rotate(-45deg);
+      animation: none; /* Start without animation */
+    }
+    .heart:before,
+    .heart:after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background-color: #e20000;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart:before {
+      top: -50px;
+      left: 0;
+    }
+    .heart:after {
+      top: 0;
+      left: 50px;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(-45deg);
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Heart container -->
+  <div class="heart" id="heart"></div>
+
+  <!-- Start/Stop button -->
+  <button id="toggleButton">Start Heartbeat</button>
+
+  <script>
+    const heart = document.getElementById('heart');
+    const button = document.getElementById('toggleButton');
+    let isPumping = false;
+
+    // Toggle the heart animation
+    button.addEventListener('click', () => {
+      if (isPumping) {
+        heart.style.animation = 'none'; // Stop animation
+        button.textContent = 'Start Heartbeat'; // Update button text
+      } else {
+        heart.style.animation = 'beat 1s infinite'; // Start animation
+        button.textContent = 'Stop Heartbeat'; // Update button text
+      }
+      isPumping = !isPumping; // Toggle the state
+    });
+  </script>
+</body>
+</html>
