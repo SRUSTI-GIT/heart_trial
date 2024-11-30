@@ -50,7 +50,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* New CSS for additional metrics */
 #bloodRate, #clotRisk, #strokeRisk {
   background-color: #fff;
   padding: 20px;
@@ -70,7 +69,6 @@ h1 {
   color: #555;
 }
 
-/* Button Styling */
 #startMonitoringBtn {
   padding: 12px 20px;
   font-size: 1.2rem;
@@ -95,7 +93,6 @@ canvas {
   margin-bottom: 20px;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .dashboard {
     flex-direction: column;
