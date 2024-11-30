@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Prosthetic Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Real-Time Prosthetic Monitoring</h1>
+        </header>
+
+        <div class="dashboard">
+            <div class="metrics">
+                <div class="metric" id="bloodFlow">
+                    <h2>Blood Flow (L/min)</h2>
+                    <div id="bloodFlowValue">Loading...</div>
+                </div>
+                <div class="metric" id="bloodPressure">
+                    <h2>Blood Pressure (mmHg)</h2>
+                    <div id="bloodPressureValue">Loading...</div>
+                </div>
+                <div class="metric" id="oxygenation">
+                    <h2>Oxygenation (%)</h2>
+                    <div id="oxygenationValue">Loading...</div>
+                </div>
+                <div class="metric" id="bloodRate">
+                    <h2>Blood Rate (beats/min)</h2>
+                    <div id="bloodRateValue">Loading...</div>
+                </div>
+                <div class="metric" id="clotRisk">
+                    <h2>Chances of Blood Clots (%)</h2>
+                    <div id="clotRiskValue">Loading...</div>
+                </div>
+                <div class="metric" id="strokeRisk">
+                    <h2>Heart Stroke Risk (%)</h2>
+                    <div id="strokeRiskValue">Loading...</div>
+                </div>
+            </div>
+
+            <div class="charts">
+                <canvas id="bloodFlowChart"></canvas>
+                <canvas id="bloodPressureChart"></canvas>
+                <canvas id="oxygenationChart"></canvas>
+                <canvas id="bloodRateChart"></canvas>
+                <canvas id="clotRiskChart"></canvas>
+                <canvas id="strokeRiskChart"></canvas>
+            </div>
+
+            <footer>
+                <button id="startMonitoringBtn">Start Monitoring</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
