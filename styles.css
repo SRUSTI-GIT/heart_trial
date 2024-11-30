@@ -1,74 +1,4 @@
-/* General reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f9fd;
-  color: #333;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h1 {
-  color: #0d6efd;
-}
-
-.dashboard {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.metrics {
-  width: 45%;
-}
-
-.metric {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.metric h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-#bloodRate, #clotRisk, #strokeRisk {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-#bloodRate h2, #clotRisk h2, #strokeRisk h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-#bloodRateValue, #clotRiskValue, #strokeRiskValue {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #555;
-}
-
+/* Button Styling */
 #startMonitoringBtn {
   padding: 12px 20px;
   font-size: 1.2rem;
@@ -83,27 +13,51 @@ h1 {
   background-color: #218838;
 }
 
-.charts {
-  width: 45%;
+#stopMonitoringBtn {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #dc3545; /* Red color for Stop button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
-canvas {
-  max-width: 100%;
-  height: 300px;
-  margin-bottom: 20px;
+#stopMonitoringBtn:hover {
+  background-color: #c82333;
+}
+/* Alert Popup Styles */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .dashboard {
-    flex-direction: column;
-    align-items: center;
-  }
+.alert button {
+    margin-left: 20px;
+    padding: 8px 16px;
+    background-color: #721c24;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-  .metrics, .charts {
-    width: 100%;
-  }
+.alert button:hover {
+    background-color: #a94442;
+}
 
-  #bloodRate, #clotRisk, #strokeRisk {
-    width: 100%;
-  }
+/* Disable button styles */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
